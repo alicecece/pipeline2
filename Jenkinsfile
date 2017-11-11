@@ -8,9 +8,9 @@ pipeline {
             sh 'echo hello world'
           }
         }
-        stage('error') {
+        stage('') {
           steps {
-            emailext(subject: 'test', body: 'jenkins test', from: 'jenkins', to: 'wualice017@gmail.com')
+            mail(subject: 'jenkins test', body: 'this is a jenkins test', from: 'jenkins', to: 'wualice017@gmail.com')
           }
         }
       }
