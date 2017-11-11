@@ -2,8 +2,17 @@ pipeline {
   agent any
   stages {
     stage('stage1') {
-      steps {
-        sh 'echo hello world'
+      parallel {
+        stage('stage1') {
+          steps {
+            sh 'echo hello world'
+          }
+        }
+        stage('') {
+          steps {
+            mail(subject: 'jenkins test', body: 'this is a test', to: 'wualice017@gmail.com', from: 'jenkins')
+          }
+        }
       }
     }
     stage('stage2') {
