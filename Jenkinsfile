@@ -3,12 +3,12 @@ pipeline {
   stages {
     stage('stage1') {
       parallel {
-        stage('stage1') {
+        stage('ooh') {
           steps {
             sh 'echo hello world'
           }
         }
-        stage('') {
+        stage('aah') {
           steps {
             mail(subject: 'jenkins test', body: 'this is a jenkins test', from: 'jenkins', to: 'wualice017@gmail.com')
           }
